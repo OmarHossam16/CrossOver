@@ -13,9 +13,9 @@ public class LoginTest extends Base {
     public static Logger log = LogManager.getLogger(Base.class.getName());
     LoginPage login;
      public void initializeLoginDriver(){
-         driver = initializeDriver();
-     }
-    public void initializePage() throws IOException {
+        driver = initializeDriver();
+    }
+    public void initialize() throws IOException {
         getProps();
         login = new LoginPage(driver);
         log.info("initialize() Done");

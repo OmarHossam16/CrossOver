@@ -12,18 +12,18 @@ import java.io.IOException;
 public class HomeTest extends Base  {
     public static Logger log = LogManager.getLogger(Base.class.getName());
     Menu menu;
-    HomePage home;
+    public static HomePage homePage;
     Footer footer;
-    public void initializeHomeDriver(){
-        driver = initializeDriver();
-    }
     public void initialize() throws IOException {
         getProps();
+        driver = initializeDriver();
         menu = new Menu(driver,version);
-        home = new HomePage(driver);
+        homePage = new HomePage(driver);
         footer = new Footer(driver);
         log.info("initialize() Done");
     }
+
+
     public void homepageToLogin(String website){
         driver.get(website);
         menu.getLoginButton().click();
